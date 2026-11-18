@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Privacy policy for Domino Shak (دومينو شك), an Android domino game with peer-to-peer chat and voice messages.">
+  <link rel="canonical" href="https://ali-ashraf-saad.github.io/dominoshak-privacy/">
+  <title>سياسة الخصوصية — دومينو شك / Privacy Policy — Domino Shak</title>
+  <style>
+    :root { color-scheme: dark light; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 1rem clamp(1rem, 4vw, 2.5rem) 3rem;
+      font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
+      line-height: 1.75;
+      background: #1b120b;
+      color: #f6ecdc;
+    }
+    main { max-width: 60rem; margin: 0 auto; }
+    header { max-width: 60rem; margin: 0 auto 1.5rem; }
+    h1 { font-size: 1.6rem; margin: 0.5rem 0; }
+    h2 { font-size: 1.2rem; margin-top: 2rem; border-bottom: 1px solid #6b4a2d; padding-bottom: .3rem; }
+    p, li, td, th { font-size: 1rem; }
+    a { color: #ffd9a8; }
+    a:hover { color: #fff4e2; }
+    .toolbar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+    button {
+      font: inherit; cursor: pointer; border: 1px solid #a97b4f; border-radius: .5rem;
+      background: #33210f; color: #f6ecdc; padding: .4rem .8rem;
+    }
+    button:hover { background: #4a3018; }
+    button[aria-pressed="true"] { background: #8a5a2c; border-color: #e0b381; }
+    .updated { margin: .75rem 0 0; font-weight: 600; color: #ffd9a8; }
+    .notice {
+      border: 1px solid #d39a4a; border-radius: .5rem; padding: .75rem 1rem;
+      background: #3a2812; margin: 1rem 0;
+    }
+    table { border-collapse: collapse; width: 100%; margin: .75rem 0 1rem; }
+    th, td { border: 1px solid #6b4a2d; padding: .5rem .6rem; text-align: start; vertical-align: top; }
+    th { background: #2d1e10; }
+    code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .9em; overflow-wrap: anywhere; }
+    section[hidden] { display: none; }
+    #en { margin-top: 2.5rem; border-top: 2px solid #6b4a2d; padding-top: 1rem; }
+    .small { font-size: .9rem; color: #d9c3a5; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="toolbar">
+      <span class="small">اللغة / Language:</span>
+      <button type="button" id="btn-ar" onclick="setLang('ar')" aria-pressed="false">العربية</button>
+      <button type="button" id="btn-en" onclick="setLang('en')" aria-pressed="false">English</button>
+      <button type="button" id="btn-both" onclick="setLang('both')" aria-pressed="true">كلاهما / Both</button>
+    </div>
+    <p class="updated">آخر تحديث: 2026-11-18 &nbsp;·&nbsp; Last updated: 2026-11-18</p>
+  </header>
+
+  <main>
+    <section id="ar" lang="ar" dir="rtl">
+      <h1>سياسة خصوصية — دومينو شك</h1>
+
+      <h2>١. نطاق السياسة</h2>
+      <p>
+        «دومينو شك» تطبيق أندرويد يعرض لعبة الدومينو داخل WebView من نسخة محلية محزّمة على
+        <code>http://localhost:8080</code>. لا يوجد حساب مستخدم، ولا خادم تابع للمطوّر، ولا تحليلات،
+        ولا إعلانات، ولا تقارير أعطال، ولا تسويق. مع ذلك، يوجد تبادل بيانات مباشر بين اللاعبين،
+        وتتعامل خدمات اتصال طرف ثالث مع بيانات الشبكة اللازمة لإنشاء الاتصال؛ لذلك لا يمكن القول
+        إنه «لا تُجمع أي بيانات» دون هذا التوضيح.
+      </p>
+
+      <h2>٢. البيانات المخزّنة على جهازك</h2>
+      <table>
+        <thead><tr><th>البيانات</th><th>أين تُحفظ</th><th>الغرض</th></tr></thead>
+        <tbody>
+          <tr><td>الاسم المعروض</td><td><code>localStorage</code> داخل WebView (المفتاح <code>dmnshk-name</code>)</td><td>إظهار اسمك للاعبين وتعبئته تلقائيًا؛ يمكنك استخدام أي اسم مستعار</td></tr>
+          <tr><td>الإعدادات (الصوت، الاهتزاز، التأكيدات، مستوى الصوت، إيقاظ الشاشة)</td><td><code>localStorage</code> على الجهاز فقط</td><td>تذكر تفضيلاتك</td></tr>
+          <tr><td>رموز إعادة الاتصال</td><td><code>localStorage</code> (مفاتيح مثل <code>dmnshk-tok-&lt;code&gt;</code>)</td><td>استعادة مقعدك بعد انقطاع الاتصال</td></tr>
+          <tr><td>معرّف لاعب مجهول (<code>dmnshk-pid</code>)</td><td><code>localStorage</code> على الجهاز</td><td>معرّف عشوائي بدون حساب، يُستخدم لحظر اللاعب وتمييز البلاغات؛ لا يكشف هويتك</td></tr>
+          <tr><td>قبول شروط المحتوى، القائمة المحلية للحظر، وصندوق البلاغات المحلي</td><td><code>localStorage</code> على الجهاز</td><td>ضوابط محلية داخل التطبيق؛ لا تُرسل إلى المطوّر حاليًا</td></tr>
+          <tr><td>رمز الغرفة</td><td>ذاكرة الصفحة فقط</td><td>إنشاء الغرفة والانضمام إليها</td></tr>
+          <tr><td>رسائل الدردشة والرسائل الصوتية</td><td>ذاكرة الصفحة فقط أثناء الجلسة</td><td>عرضها أثناء اللعب؛ لا تحتفظ بها اللعبة على خادم</td></tr>
+          <tr><td>معرّف PeerJS عشوائي</td><td>لا يُحفظ على الجهاز بواسطة التطبيق</td><td>توصيلك بلاعبين آخرين</td></tr>
+        </tbody>
+      </table>
+      <p class="small">خاصية <code>allowBackup=false</code> تمنع تضمين هذه القيم في نسخ أندرويد السحابية.</p>
+
+      <h2>٣. البيانات التي تُشارك مع لاعبين آخرين</h2>
+      <ul>
+        <li><strong>الاسم المعروض:</strong> يظهر للاعبين الموجودين في الغرفة نفسها.</li>
+        <li><strong>نص الدردشة:</strong> الرسائل المكتوبة والعبارات الجاهزة والرموز التعبيرية تُرسل مباشرة (Peer-to-Peer) إلى لاعبي الغرفة.</li>
+        <li><strong>الصوت:</strong> رسالة صوتية بحد أقصى ٣٠ ثانية تُرسل مباشرة إلى لاعبي الغرفة عند تسجيلها.</li>
+      </ul>
+      <p>
+        هذه البيانات تصل إلى أجهزة لاعبين آخرين، وهم أشخاص قد يحتفظون بها أو يعيدون نشرها خارج
+        التطبيق؛ لا تستطيع اللعبة التحكم فيما يفعله اللاعبون بالمحتوى الذي يستلمونه.
+      </p>
+
+      <h2>٤. خدمات طرف ثالث</h2>
+      <table>
+        <thead><tr><th>الخدمة</th><th>ما تراه</th><th>الغرض</th></tr></thead>
+        <tbody>
+          <tr><td>وسيط PeerJS العام <code>wss://0.peerjs.com</code></td><td>عنوان IP الخاص بك ومعرّف اتصال/جلسة عشوائي (peer ID)، كأي خادم WebSocket</td><td>تنسيق الاتصال فقط؛ لا يمرّر محتوى الدردشة أو الصوت عبر خادم المطوّر</td></tr>
+          <tr><td>STUN: <code>stun:stun.l.google.com:19302</code> و<code>stun:global.stun.twilio.com:3478</code></td><td>عنوان IP ومعرّف اتصال قصير العمر لتحديد العنوان العام</td><td>مساعدة الجهازين على إيجاد اتصال مباشر</td></tr>
+        </tbody>
+      </table>
+      <p>
+        <strong>لا يوجد خادم TURN</strong>؛ أي أن الوسائط والرسائل تسير مباشرة بين الأجهزة، وإذا تعذّر
+        الاتصال المباشر لا تعمل الغرفة بدلًا من تمرير البيانات عبر خادم وسيط. للمطوّرين هذه الخدمات
+        سياساتهم الخاصة؛ هذه السياسة لا تغطي سياساتهم.
+      </p>
+
+      <h2>٥. الميكروفون</h2>
+      <p>
+        يُطلب إذن <code>RECORD_AUDIO</code> فقط بعد الضغط على زر الميكروفون: تظهر أولًا شاشة شرح
+        داخل التطبيق، ثم مربع أذن أندرويد إذا تابع المستخدم. رفض الإذن لا يوقف بقية اللعبة.
+        يُسمح لـ WebView بالوصول إلى الميكروفون لمصدر <code>http://localhost:8080</code> فقط،
+        ولا يُسجَّل الصوت إلا أثناء عرض واجهة التسجيل وبحد أقصى ٣٠ ثانية، ويُرسل إلى لاعبي الغرفة فقط.
+      </p>
+
+      <h2>٦. الأذونات والوصول إلى الجهاز</h2>
+      <table>
+        <thead><tr><th>الإذن / الواجهة</th><th>الغرض</th><th>ملاحظة</th></tr></thead>
+        <tbody>
+          <tr><td><code>INTERNET</code></td><td>تنسيق PeerJS واتصال WebRTC</td><td>إذن عادي ومطلوب</td></tr>
+          <tr><td><code>RECORD_AUDIO</code></td><td>الرسائل الصوتية</td><td>عند الطلب فقط</td></tr>
+          <tr><td><code>VIBRATE</code></td><td>الاهتزاز عند الإعدادات</td><td>إذن عادي</td></tr>
+          <tr><td>الحافظة (Clipboard) ومربع المشاركة</td><td>نسخ رمز الغرفة ومشاركته</td><td>فقط عبر زري النسخ والمشاركة؛ لا تُقرأ الحافظة تلقائيًا</td></tr>
+        </tbody>
+      </table>
+      <p>لا يوجد وصول إلى الموقع أو جهات الاتصال أو الكاميرا أو تخزين الملفات أو خدمات خلفية.</p>
+
+      <h2>٧. الأطفال</h2>
+      <p>
+        التطبيق غير موجه للأطفال دون ١٣ عامًا، ويحتوي على دردشة ورسائل صوتية مع لاعبين قد لا
+        يكونون معروفين. التصنيف العمري المناسب للمراجعة هو على الأقل «Teen / 12+» ويجب تأكيده
+        في استبيان تقييم المحتوى.
+      </p>
+
+      <h2>٨. حذف البيانات</h2>
+      <p>
+        لا توجد بيانات محفوظة على خادم تابع للمطوّر يحذفها الطلب. إزالة التطبيق من الجهاز تمسح
+        بياناته المحلية، ويمكن أيضًا مسحها من «الإعدادات ← التطبيقات ← دومينو شك ← التخزين ← مسح
+        البيانات». لا تُنقل هذه البيانات إلى حساب سحابي لأن <code>allowBackup=false</code>. لأي طلب
+        حذف آخر، راسلنا عبر بريد التواصل في القسم ١١.
+      </p>
+
+      <h2>٩. المحتوى والإبلاغ والحظر</h2>
+      <p>
+        التطبيق يحتوي على محتوى ينشئه المستخدمون (الاسم، الدردشة، الصوت). توجد ضوابط محلية مطبّقة
+        لقبول الشروط والحظر والبلاغات، لكن زر البلاغ داخل التطبيق <strong>لا يُعد نظام إشراف حقيقيًا</strong>:
+        البلاغ يُحفظ على الجهاز ولا يُرسل تلقائيًا، ولا توجد قائمة حظر مُدارة مركزيًا ولا قرار استئناف.
+        يمكنك إرسال بلاغ يدويًا إلى بريد الدعم أدناه، لكن ذلك لا يُنشئ نظام مراجعة داخل التطبيق.
+        حتى تتوفر قناة إبلاغ وإشراف مُعلنة، يُعد هذا العائق مانعًا للإصدار.
+      </p>
+
+      <h2>١٠. التغييرات على هذه السياسة</h2>
+      <p>أي تغيير في البيانات أو الخدمات أو إضافة خادم للإشراف يستوجب تحديث هذا المستند وتاريخه قبل الإصدار.</p>
+
+      <h2>١١. التواصل مع المطوّر</h2>
+      <p>
+        <strong>اسم المطوّر:</strong> دومينو شك (Domino Shak).<br>
+        <strong>بريد الدعم والخصوصية والبلاغات:</strong>
+        <a href="mailto:dominoshak.support@gmail.com">dominoshak.support@gmail.com</a><br>
+        <strong>النسخة المنشورة من هذه السياسة:</strong>
+        <a href="https://ali-ashraf-saad.github.io/dominoshak-privacy/">https://ali-ashraf-saad.github.io/dominoshak-privacy/</a>
+      </p>
+      <p class="small">
+        يُستخدم البريد لطلبات الحذف والخصوصية وللبلاغات والاستئنافات. لا يلزم إنشاء حساب أو إرسال
+        بيانات شخصية للعب؛ لا ترسل معلومات خاصة غير لازمة عند التواصل.
+      </p>
+    </section>
+
+    <section id="en" lang="en" dir="ltr">
+      <h1>Privacy Policy — Domino Shak</h1>
+
+      <h2>1. Scope</h2>
+      <p>
+        Domino Shak is an Android app that displays a bundled Arabic domino game in a WebView at
+        <code>http://localhost:8080</code>. There is no user account, no developer-operated server,
+        no analytics, no ads, no crash reporting, and no marketing. However, players exchange data
+        directly with each other, and third-party connection services necessarily process network
+        metadata to establish the connection. For that reason we do not claim simply that "no data
+        is collected" without the qualifications below.
+      </p>
+
+      <h2>2. Data stored on your device</h2>
+      <table>
+        <thead><tr><th>Data</th><th>Where it is stored</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Display name</td><td>WebView <code>localStorage</code> (key <code>dmnshk-name</code>)</td><td>Shown to players in the room and pre-filled next time; any nickname is allowed</td></tr>
+          <tr><td>Settings (sound, vibration, confirmations, volume, wake lock)</td><td><code>localStorage</code> on the device only</td><td>Remember preferences</td></tr>
+          <tr><td>Reconnect tokens</td><td><code>localStorage</code> (keys such as <code>dmnshk-tok-&lt;code&gt;</code>)</td><td>Reclaim your seat after a drop</td></tr>
+          <tr><td>Anonymous player ID (<code>dmnshk-pid</code>)</td><td><code>localStorage</code> on the device</td><td>A random ID with no account, used to block a player and label reports; it does not reveal your identity</td></tr>
+          <tr><td>UGC terms acceptance, local blocklist, local report outbox</td><td><code>localStorage</code></td><td>Local-only controls; not sent to the developer today</td></tr>
+          <tr><td>Room code</td><td>Page memory only</td><td>Create/join a room</td></tr>
+          <tr><td>Text chat and voice messages</td><td>Page memory only during the session</td><td>Display during play; the game does not keep them on a server</td></tr>
+          <tr><td>Random PeerJS peer ID</td><td>Not persisted by the app</td><td>Connect you to other players</td></tr>
+        </tbody>
+      </table>
+      <p class="small"><code>allowBackup=false</code> keeps these values out of Android cloud backups.</p>
+
+      <h2>3. Data shared with other players</h2>
+      <ul>
+        <li><strong>Display name:</strong> visible to the other players in the same room.</li>
+        <li><strong>Chat text:</strong> typed messages, quick phrases, and emojis are sent peer-to-peer to the room's players.</li>
+        <li><strong>Voice:</strong> a voice message of up to 30 seconds, when recorded, is sent peer-to-peer to the room's players.</li>
+      </ul>
+      <p>
+        This data reaches other people's devices. They may save or repost what they receive; the
+        game cannot control what other players do with it.
+      </p>
+
+      <h2>4. Third-party services</h2>
+      <table>
+        <thead><tr><th>Service</th><th>What it sees</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Public PeerJS signaling broker <code>wss://0.peerjs.com</code></td><td>Your IP address and a random peer/session ID, like any WebSocket server</td><td>Signaling only; no developer server handles chat or voice content</td></tr>
+          <tr><td>STUN: <code>stun:stun.l.google.com:19302</code> and <code>stun:global.stun.twilio.com:3478</code></td><td>IP address and a short-lived connection identifier to discover your public address</td><td>Help the two devices find a direct connection</td></tr>
+        </tbody>
+      </table>
+      <p>
+        <strong>No TURN server is configured.</strong> Media and messages travel directly between
+        devices; if a direct connection cannot be established the room does not work instead of
+        being relayed through a server. These third parties have their own policies, which this
+        document does not replace.
+      </p>
+
+      <h2>5. Microphone</h2>
+      <p>
+        <code>RECORD_AUDIO</code> is requested only after you tap the microphone button: an in-app
+        explanation appears first, then the Android permission dialog if you continue. Refusing it
+        leaves the rest of the game usable. The WebView grants microphone access only for
+        <code>http://localhost:8080</code>. Audio is recorded only while the recording UI is active,
+        capped at 30 seconds, and sent only to the room.
+      </p>
+
+      <h2>6. Permissions and device access</h2>
+      <table>
+        <thead><tr><th>Permission / API</th><th>Purpose</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td><code>INTERNET</code></td><td>PeerJS signaling and WebRTC</td><td>Normal permission, required</td></tr>
+          <tr><td><code>RECORD_AUDIO</code></td><td>Voice messages</td><td>Runtime, on demand</td></tr>
+          <tr><td><code>VIBRATE</code></td><td>Haptic feedback</td><td>Normal permission</td></tr>
+          <tr><td>Clipboard and share sheet</td><td>Copy/share the room code</td><td>Only through the dedicated buttons; the clipboard is not read automatically</td></tr>
+        </tbody>
+      </table>
+      <p>No location, contacts, camera, file storage, or background services.</p>
+
+      <h2>7. Children</h2>
+      <p>
+        The app is not directed at children under 13 and includes chat and voice messages with
+        players who may be strangers. A content rating of at least "Teen / 12+" is the expected
+        outcome and must be confirmed in the content-rating questionnaire.
+      </p>
+
+      <h2>8. Data deletion</h2>
+      <p>
+        There is no developer server holding your data to delete. Uninstalling the app removes its
+        local data; you can also use Android Settings → Apps → Domino Shak → Storage → Clear data.
+        <code>allowBackup=false</code> prevents cloud backup of these values. For any other deletion
+        request, contact the developer using the email in section 11.
+      </p>
+
+      <h2>9. User-generated content, reporting, and blocking</h2>
+      <p>
+        The app contains user-generated content (names, chat, voice). Local terms-acceptance,
+        blocklist, and report-outbox controls are implemented, but <strong>the in-app report button
+        is not real moderation</strong>: the report stays on the device and is not sent
+        automatically, there is no centrally managed blocklist, and there is no appeal decision.
+        You may email a report manually to the support address below, but that does not create an
+        in-app review system. Until an announced reporting and moderation path exists, this is a
+        release blocker.
+      </p>
+
+      <h2>10. Changes</h2>
+      <p>
+        Any change to data flows, services, or the addition of a moderation server requires this
+        policy and its date to be updated before release.
+      </p>
+
+      <h2>11. Contact the developer</h2>
+      <p>
+        <strong>Developer name:</strong> Domino Shak (دومينو شك).<br>
+        <strong>Support, privacy, and report email:</strong>
+        <a href="mailto:dominoshak.support@gmail.com">dominoshak.support@gmail.com</a><br>
+        <strong>Published copy of this policy:</strong>
+        <a href="https://ali-ashraf-saad.github.io/dominoshak-privacy/">https://ali-ashraf-saad.github.io/dominoshak-privacy/</a>
+      </p>
+      <p class="small">
+        Use this address for deletion/privacy requests, reports, and appeals. No account or personal
+        data is required to play; please do not include unnecessary personal information when writing.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    function setLang(lang) {
+      document.getElementById('ar').hidden = (lang === 'en');
+      document.getElementById('en').hidden = (lang === 'ar');
+      ['ar', 'en', 'both'].forEach(function (id) {
+        document.getElementById('btn-' + id).setAttribute('aria-pressed', String(id === lang));
+      });
+    }
+  </script>
+</body>
+</html>
